@@ -52,9 +52,6 @@ function Contact() {
           </a>
         </div>
 
-        {/* ── Divider ── */}
-        <div className="contact__rule" aria-hidden="true" />
-
         {/* ── Social links ── */}
         <div className="contact__socials">
           <span className="contact__socials-label">Find me elsewhere</span>
@@ -79,11 +76,6 @@ function Contact() {
             ))}
           </div>
         </div>
-
-        {/* ── Footer note ── */}
-        <p className="contact__footer">
-          Designed &amp; built by <span className="contact__footer-name">Patrick Cantero</span>. &copy; {new Date().getFullYear()}
-        </p>
 
       </div>
     </section>
