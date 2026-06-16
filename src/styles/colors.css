@@ -1,0 +1,52 @@
+:root {
+  /* Core palette (from theme reference) */
+  --sage: #9CB080;
+  --moss: #618264;
+  --pine: #2B5748;
+  --ink: #273338;
+
+  /* Dark surfaces */
+  --bg-base: #14191B;
+  --bg-surface: #1C2426;
+  --bg-surface-alt: #232E30;
+  --bg-elevated: #2B5748;
+  --bg-elevated-soft: rgba(43, 87, 72, 0.35);
+
+  /* Text */
+  --text-primary: #F4F2E9;
+  --text-secondary: #A9B5AE;
+  --text-muted: #7C8A83;
+  --text-on-accent: #14191B;
+
+  /* Accents */
+  --accent: var(--sage);
+  --accent-strong: var(--moss);
+  --accent-deep: var(--pine);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--sage) 0%, var(--moss) 100%);
+  --gradient-glow: radial-gradient(circle at 30% 20%, rgba(156, 176, 128, 0.18), transparent 60%);
+  --gradient-surface: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+  --gradient-text: linear-gradient(135deg, var(--sage) 0%, #C9D8B5 50%, var(--moss) 100%);
+
+  /* Borders / lines */
+  --line: rgba(244, 242, 233, 0.08);
+  --line-strong: rgba(156, 176, 128, 0.25);
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 20px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(156, 176, 128, 0.18);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+
+  /* Type */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-headline: "Space Grotesk", "Fraunces", sans-serif;
+  --font-code: "JetBrains Mono", "Space Mono", monospace;
+  --font-body: "Sora", "Helvetica Neue", sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+}

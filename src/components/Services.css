@@ -1,0 +1,262 @@
+/* ── Section shell ─────────────────────────────────────── */
+.services {
+  position: relative;
+  background: var(--bg-base);
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+.services__glow {
+  position: absolute;
+  bottom: -15%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(97, 130, 100, 0.10), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.services__header {
+  max-width: 560px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.services__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+
+.services__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--sage);
+}
+
+.services__title {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* ── Shimmer (matches site-wide) ──────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.services__anim {
+  background: linear-gradient(
+    90deg,
+    #618264 0%,
+    #a3d9a5 22%,
+    #d4f0d6 42%,
+    #81c784 58%,
+    #618264 78%,
+    #b2dfdb 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3.5s linear infinite;
+  display: inline;
+}
+
+.services__subtitle {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* ── Grid — 3 equal columns ────────────────────────────── */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+/* ── Card ──────────────────────────────────────────────── */
+.services__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(97, 130, 100, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.services__card:hover {
+  border-color: var(--sage);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+}
+
+.services__card:hover::before {
+  opacity: 1;
+}
+
+/* ── Index — top-right corner ──────────────────────────── */
+.services__card-index {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--sage);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+/* ── Icon ──────────────────────────────────────────────── */
+.services__card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(97, 130, 100, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sage);
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.services__card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* ── Title + summary ───────────────────────────────────── */
+.services__card-title {
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.services__card-summary {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0;
+}
+
+/* ── Divider ───────────────────────────────────────────── */
+.services__card-divider {
+  height: 1px;
+  background: var(--line-strong);
+  border-radius: 1px;
+  margin: 2px 0;
+}
+
+/* ── Description ───────────────────────────────────────── */
+.services__card-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ── Deliverables list ─────────────────────────────────── */
+.services__deliverables {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.services__deliverable {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.services__deliverable-dot {
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  border-radius: 50%;
+  background: var(--sage);
+  opacity: 0.55;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 80px 0 72px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__card {
+    padding: 24px 20px;
+  }
+}
+
+/* ── Fade-up ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
